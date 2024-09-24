@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Bø Industri
+        </title>
+        <link rel="stylesheet" href="Style.css">
+        <link rel="stylesheet" href="Grid.css">
+        <link rel="stylesheet" href="Background.css">
+    </head>
+
+    <body>
+    
+        <div class="container">
+        <div class="item">Videresalg </div>
+        <div class="item">Henting </div>
+        <div class="item">Utleie </div>
+       
+
+    </div>
+        <h1>Bø Industri</h1>
+        <p>Salg & Hent</p>
+    </body>
+</html>
