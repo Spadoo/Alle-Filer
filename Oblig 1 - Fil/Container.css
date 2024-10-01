@@ -1,6 +1,6 @@
 /* Global styling */
 :root {
-  --main-bg-color: #114a4e;
+  --main-bg-color: #2c3e50;
   --hover-bg-color: #89a0a8;
 }
 
@@ -12,28 +12,45 @@
 
 body {
   font-family: Arial, sans-serif;
+  padding-top: 70px;
 }
 
-/* Navigation Bar */
+/*Navbar*/
+
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Keep items aligned to the left initially */
   align-items: center;
   background-color: var(--main-bg-color);
   padding: 15px 30px;
   color: white;
   width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .logo {
+  display: flex;  
+  align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
+.logo img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px; 
+}
+
+
 .nav-items {
   display: flex;
   align-items: center;
+  margin-left: auto; 
 }
 
 .nav-items a {
@@ -46,6 +63,18 @@ body {
 .nav-items a:hover {
   background-color: var(--hover-bg-color);
   border-radius: 5px;
+}
+
+.slogan {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  color: white;
+  margin-left: 15px
+}
+
+.navbar .logo, .navbar .slogan {
+  display: flex;
+  align-items: center;
 }
 
 /* Dropdown Menu */
@@ -73,8 +102,8 @@ body {
   position: absolute;
   background-color: white;
   min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Increased shadow intensity */
-  z-index: 100; /* Ensures dropdown stays on top */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 100;
   border-radius: 5px;
 }
 
@@ -120,27 +149,33 @@ body {
   text-decoration: underline;
 }
 
-/* Responsivt design for mindre skjermer */
+/* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .navbar {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between; /* Ensures logo and nav-items stay separated */
   }
 
   .nav-items {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: row;  /* Keep nav items in a row */
+    justify-content: flex-end;
   }
 
   .dropbtn {
-      width: 100%;
+    width: auto;
   }
 
   .dropdown-content {
-      min-width: 100%;
+    min-width: 100%;
   }
 
   .container {
-      grid-template-columns: 1fr; /* Single column for smaller screens */
+    grid-template-columns: 1fr;  /* Single column for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .slogan {
+    font-size: 0.9rem;
   }
 }

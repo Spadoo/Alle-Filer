@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bø Industri</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="Grid.css">
+    <link rel="stylesheet" href="Background.css">
+    <link rel="stylesheet" href="Footer.css">
+    <link rel="stylesheet" href="Container.css">
+    <link rel="stylesheet" href="Slogan.css">
+    <link rel="stylesheet" href="Nyheter.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="Oblig 1.html" class="logo">
+            <img src="BøIndustriLogo.jpeg" alt="logo">
+        </a>
+        <span class="slogan">Bø Industri</span>
+        <div class="nav-items">
+            <a href="Videresalg.html">Videresalg</a>
+            <a href="Henting.html">Henting</a>
+            <a href="Utleie.html">Utleie</a>
+            <div class="dropdown">
+                <button class="dropbtn">Meny</button>
+                <div class="dropdown-content">
+                    <a href="Oblig 1.html">Hjem</a>
+                    <a href="FAQ.html">FAQ</a>
+                    <a href="Utleie.html">Kontakt Oss</a>
+                    <a href="Om oss.html">Om Oss</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slogan-container" id="slogan-container">
+        <h1 class="slogan-text">Alt For Vær & Vind</h1>
+    </div>
+    
+    <div class="whats-new" id="whats-new" style="display: none;">
+        <button class="arrow left-arrow">←</button>
+        <div class="image-container">
+            <div class="image-box">
+                <img src="Arbeider Bø.jpg" alt="New Item 1">
+            </div>
+            <div class="image-box">
+                <img src="Traktor.jpeg" alt="New Item 2">
+            </div>
+            <div class="image-box">
+                <img src="Gård.jpg" alt="New Item 3">
+            </div>
+        </div>
+        <button class="arrow right-arrow">→</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                var slogan = document.getElementById('slogan-container');
+                var whatsNew = document.getElementById('whats-new');
+                slogan.classList.add('slogan-hidden');
+                setTimeout(function() {
+                    slogan.style.display = 'none';
+                    whatsNew.style.display = 'flex'; 
+                }, 500); 
+            }, 3000)
+        };
+    </script>
+    
+
+    <div class="footer">
+        <div class="footer-content">
+            <a href="Om oss.html">Om Oss</a>
+            <a href="contact.html">Kontakt Oss</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2024 Bø Industri. All rights reserved.</p>
+        </div>
+    </div>
+
+</body>
+</html>
