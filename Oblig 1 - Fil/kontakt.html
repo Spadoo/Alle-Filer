@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bø Industri</title>
+    <!-- Koble til eksterne CSS-filer-->
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="Background.css">
+    <link rel="stylesheet" href="Container.css">
+    <link rel="stylesheet" href="Footer.css">
+    <link rel="stylesheet" href="Skrifttyper.css">
+
+    <!-- Intern CSS for informasjon boksene og sticky footer -->
+    <style>
+        /* Sørger for at body og html fyller hele siden */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Sørger for at body alltid er minst 100vh høy */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+            color: #fff;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar .nav-items a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Container Styles */
+        .container {
+            display: flex;
+            justify-content: center; /* Sentraliserer innhold horisontalt */
+            align-items: flex-start; /* Justerer innholdet til toppen */
+            flex: 1; /* Fyller tilgjengelig plass */
+            padding: 20px;
+            gap: 20px; /* mellomrom mellom boxes */
+        }
+
+        .info-box, .person-list {
+            width: 300px; /* Bredde for boksene */
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Lett hvit bakgrunn for lesbarhet */
+            border-radius: 5px; /* Runde hjørner */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #000; /* Setter tekstfargen til svart */
+            text-align: center; /* Sentraliserer teksten inni boksene */
+        }
+
+        .info-box h2, .person-list h3 {
+            margin-top: 0;
+            color: #333; /* Mørkere tekstfarge for overskrifter */
+        }
+
+        /* Styles for stjerner */
+        .person {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between; /* Plasserer stjerner på høyre side */
+            align-items: center; /* Vertikal sentrering */
+        }
+
+        .stars {
+            color: gold; /* Farge for stjerner */
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-copy {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">Bø Industri</div>
+        <div class="nav-items">
+            <a href="Videresalg.html">Videresalg</a>
+            <a href="Henting.html">Henting</a>
+            <a href="Utleie.html">Utleie</a>
+            <div class="dropdown">
+                <button class="dropbtn">Meny</button>
+                <div class="dropdown-content">
+                    <a href="Videresalg.html">Hjem</a>
+                    <a href="FAQ.html">FAQ</a>
+                    <a href="Utleie.html">Kontakt Oss</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <!-- Info Boxes -->
+        <div class="info-box">
+            <h2>Hvem er Bø Industri</h2>
+            <p>Bø Industri selger naturlige råvarer og er et mer bærekraftig valg. Du kaster, vi bruker!</p>
+        </div>
+
+        <div class="info-box">
+            <h2>Kontakt Oss</h2>
+            <p>For mer informasjon, vennligst kontakt oss på e-post: <a href="mailto:kontakt@boindustri.no">kontakt@boindustri.no</a> eller ring oss på telefon: 123 45 678.</p>
+        </div>
+
+        <!-- Person Liste -->
+        <div class="person-list">
+            <h3>Kundeservice</h3>
+            <div class="person">
+                <span>Ola Nordmann</span>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="person">
+                <span>Kari Nordmann</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+            </div>
+            <div class="person">
+                <span>Anne Hansen</span>
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="person">
+                <span>Per Olsen</span>
+                <span class="stars">⭐⭐⭐</span>
+            </div>
+            <div class="person">
+                <span>Lisa Jensen</span>
+                <span class="stars">⭐⭐⭐⭐</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Seksjon -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="cookies.html">Cookies</a>
+            <a href="faq.html">FAQ</a>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2024 Bø Industri. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
