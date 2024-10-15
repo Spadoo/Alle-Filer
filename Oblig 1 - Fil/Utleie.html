@@ -1,45 +1,382 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>
-           Utleie
-        </title>
-        <link rel="stylesheet" href="Style.css">
-        <link rel="stylesheet" href="Background.css">
-        <link rel="stylesheet" href="Grid.css">
-        <link rel="stylesheet" href="Container.css">
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bø industri utleie side</title>
 
-    <body>
-         
-        <div class="navbar">
-            <a href="Hjem.html" class="logo">
-                <img src="BøIndustriLogo.jpeg" alt="logo">
-            </a>
-            <span class="slogan">Bø Industri</span>
-            <div class="nav-items">
-                <a href="Videresalg.html">Videresalg</a>
-                <a href="Henting.html">Henting</a>
-                <a href="Utleie.html">Utleie</a>
-                <div class="dropdown">
-                    <button class="dropbtn">Om oss</button>
-                    <div class="dropdown-content">
-                        <a href="Om oss.html">Om Bø Industribedrift</a>
-                        <a href="Vår historie.html">Vår Historie</a>
-                        <a href="Vår visjon.html">Vår Visjon</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn">Meny</button>
-                    <div class="dropdown-content">
-                        <a href="Hjem.html">Hjem</a>
-                        <a href="FAQ.html">FAQ</a>
-                        <a href="kontakt.html">Kontakt Oss</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<style> 
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
 
-    </body>
+    header {
+        background-color: #2c3e50;
+        padding: 1em 2em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        border-bottom: solid #000000; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .site-title {
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: bolder;
+        color: rgb(255, 255, 255);
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        gap: 2em;
+    }
+
+    nav ul li {
+        display: inline;
+    }
+
+    nav ul li a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            gap: 1em;
+            align-items: center;
+        }
+
+        .site-title {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 1em;
+        }
+    }
+
+    main {
+        margin-top: 100px; 
+    }
+
+    h1 {
+        text-align: center;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 5vh;
+    }
+
+    body {
+        background-image: url(friluftside.jpg); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    height: 100vh;
+    margin: 0;
+    }
+
+    .container {
+        position: relative;
+        height: auto;
+        margin: auto;
+    }
+
+
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top:solid black;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+}
+
+.footer-copy p {
+    margin: 0;
+}
+
+
+    .left-arrow, .right-arrow {
+        position: fixed;
+        bottom: 45%;
+        font-size: 6vw; 
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        color: rgb(255, 123, 0);
+    }
+
+    .left-arrow {
+        left: 8vw; 
+    }
+
+    .right-arrow {
+        right: 8vw; 
+    }
+
+    .center-bottom, .right-bottom, .Left-bottom, .hidden-bilden {
+        position: fixed;
+        margin-top: 5%; 
+        text-align: center;
+        font-size: smaller;
+        font-style: oblique;
+        border-radius: 5%;
+        padding: 0em;
+    }
+
+    .center-bottom {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .right-bottom {
+        right: 20vw;
+    }
+
+    .Left-bottom {
+        left: 20vw;
+    }
+
+    .hidden-bilden {
+        display: none;
+    }
+
+    img {
+        width: 15vw; 
+        max-width: 100%; 
+        height: 20vw; 
+        border-radius: 5%;
+    }
+
+    .wrapper{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 75px;
+      position: relative;
+    }
+
+    .content{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      opacity: 0;
+      transition: opacity 0.6s;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .wrapper:hover .content {
+        opacity: 1;
+    }
+
+    .wrapper:hover img {
+        filter: blur(5px);
+    }
+
+    .content h1{
+      font-size: 3em;
+      color: aliceblue;
+      margin-bottom: 10px;
+    }
+
+    .content p{
+      font-size: 1.5em;
+      font-weight: bold;
+      color: aquamarine;
+    }
+
+    .content > *{
+      transform:translateY(25px);
+      transition:transform 0.6s;
+    }
+
+    .content:hover > *{
+      transform: translateY(0px);
+    }
+
+    @media (max-width: 768px) {
+        .left-arrow, .right-arrow {
+            font-size: 10vw; 
+        }
+
+        .center-bottom, .right-bottom, .Left-bottom {
+            bottom: 15%; 
+        }
+
+        .center-bottom {
+            width: 90vw;
+            left: 50%;  
+            transform: translateX(-50%);
+        }
+
+        img {
+            width: 100%; 
+            display: block;
+            margin: auto;
+        }
+    }
+</style>
+</head>
+
+
+<body>
+  <header>
+     <div
+      class="site-title"> Bø industri-utleie av produkter
+    </div>
+  </header>
+
+  <div>
+      <h1> Bø industri-utleie av produkter</h1>
+  </div>
+
+  <div class="footer">
+    <div class="footer-content">
+        <a href="about.html">Om Oss</a>
+        <a href="contact.html">Kontakt Oss</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copy">
+        <p>&copy; 2024 Bø Industri. All rights reserved.</p>
+    </div>
+</div>
+
+
+  <button class="right-arrow">&#8594;</button> 
+  <button class="left-arrow">&#8592;</button>
+
+  <!-- Midtbilde -->
+  <div class="center-bottom">
+    <div class="image-wrapper">
+      <div class="wrapper">
+          <img src="Gressklipper_gul.jpg" alt="Gressklipper">
+          <div class="content">
+              <h1>Gressklipper</h1>
+              <p>Effektiv gressklipper til alt vær</p>
+              <P>Bare 300kr dagen</P>
+          </div>
+      </div>    
+    </div>
+  </div>
+  
+  <!-- Høyre bilde -->
+  <div class="right-bottom">
+    <div class="image-wrapper">
+      <div class="wrapper">
+          <img src="Snfreser.jpg" alt="Snøfreser">
+          <div class="content">
+              <h1>Snøfreser</h1>
+              <p>Effektiv snøfreser for vinteren</p>
+              <P>Bare 300kr dagen</P>
+          </div>
+      </div>
+    </div>  
+  </div>
+
+  <!-- Venstre bilde -->
+  <div class="Left-bottom">
+    <div class="image-wrapper">
+      <div class="wrapper">
+          <img src="lvblaser.jpg" alt="Løvblåser">
+          <div class="content">
+              <h1>Løvblåser</h1>
+              <p>Kraftig løvblåser for høsten</p>
+              <P>Bare 300kr dagen</P>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gjemt bilde -->
+  <div class="hidden-bilden">
+    <div class="image-wrapper">
+      <div class="wrapper">
+          <img src="hytrykkspyler_2.9d3cf9d0.jpg" alt="Høytrykkspyler">
+          <div class="content">
+              <h1>Høytrykkspyler</h1>
+              <p>Kraftig høytrykkspyler for vårrengjøring</p>
+              <P>Bare 300kr dagen</P>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+      // Hent referanser til wrapper-divene, ikke bare bildene
+      const centerWrapper = document.querySelector('.center-bottom .wrapper');
+      const leftWrapper = document.querySelector('.Left-bottom .wrapper');
+      const rightWrapper = document.querySelector('.right-bottom .wrapper');
+      const hiddenWrapper = document.querySelector('.hidden-bilden .wrapper');
+
+      // Funksjon for å rotere wrapperne til høyre
+      function rotateRight() {
+          const temp = centerWrapper.innerHTML;
+
+          centerWrapper.innerHTML = leftWrapper.innerHTML;
+          leftWrapper.innerHTML = hiddenWrapper.innerHTML;
+          hiddenWrapper.innerHTML = rightWrapper.innerHTML;
+          rightWrapper.innerHTML = temp;
+      }
+
+      // Funksjon for å rotere wrapperne til venstre
+      function rotateLeft() {
+          const temp = centerWrapper.innerHTML;
+
+          centerWrapper.innerHTML = rightWrapper.innerHTML;
+          rightWrapper.innerHTML = hiddenWrapper.innerHTML;
+          hiddenWrapper.innerHTML = leftWrapper.innerHTML;
+          leftWrapper.innerHTML = temp;
+      }
+
+      // Lytt til pilknappene for å rotere
+      document.querySelector('.right-arrow').addEventListener('click', rotateRight);
+      document.querySelector('.left-arrow').addEventListener('click', rotateLeft);
+  </script>
+</body>
 </html>
-
